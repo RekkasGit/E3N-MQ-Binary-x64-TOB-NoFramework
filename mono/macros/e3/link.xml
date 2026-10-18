@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<linker>
+  <!-- Preserve critical Mono/System networking types -->
+  <assembly fullname="System">
+    <type fullname="System.Net.WebRequest" preserve="all"/>
+    <type fullname="System.Net.HttpWebRequest" preserve="all"/>
+    <type fullname="System.Net.ServicePointManager" preserve="all"/>
+  </assembly>
+
+  <!-- Preserve Octokit types from being stripped -->
+  <assembly fullname="Octokit">
+    <type fullname="Octokit.*" preserve="all"/>
+  </assembly>
+</linker>
